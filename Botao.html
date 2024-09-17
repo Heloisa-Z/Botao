@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você foi selecionada para um bandate</title>
+
+    <style>
+        body{
+            background-color: rgb(194, 127, 138);
+
+        }
+        .painel{
+            margin: auto;
+            width: 520px;
+            height: 500px;
+            background-color: white;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #aceito{
+            height: 40px;
+            width: 60px;
+            background-color: rgb(194, 127, 138);
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -50px;
+
+        }
+        #naoaceito{ 
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: rgb(194, 127, 138);
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 0px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="painel">
+        <h1>Você foi selecionada para um bandate</h1> 
+        <img src="https://media.tenor.com/sR8sQVIT8VkAAAAM/tulla-tulla-luana.gif" alt="">
+        <h2> Aceita esse privilégio? </h2>
+        <h4> (Pode escolher o dia) </h4>
+        <a href="https://www.youtube.com/watch?v=b0Ya9dPu1mo"><button id="aceito"> Aceito! </button></a>
+        <button onmouseover="fuja()" id="naoaceito"> Não aceito! </button>
+
+    </div>
+
+    <script>
+        function fuja(){
+            var botaonaoaceito = document.getElementById("naoaceito")
+
+            var largurajanela = window.innerWidth; 
+            var alturajanela = window.innerHeight;
+
+            var maxX = largurajanela - botaonaoaceito.offsetWidth
+            var maxY = alturajanela - botaonaoaceito.offsetHeight
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY)
+
+            botaonaoaceito.style.left = aleatorioX + "px";
+            botaonaoaceito.style.top = aleatorioY + "px";
+        }
+    </script>
+</body>
+</html>
